@@ -1,0 +1,18 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Att\Workit\AttController;
+use Illuminate\Http\Request;
+
+class {{ class }} extends AttController
+{
+    public function __construct()
+    {
+        // $repository = new SchemeRepository();
+        // $service = new SchemeService();
+
+        // parent::__construct($repository, $service);
+    }
+}

@@ -1,0 +1,14 @@
+<?php
+
+namespace {{ namespace }};
+
+use Att\Workit\AttRepository;
+use {{ namespacedModel }};
+
+class {{ class }} extends AttRepository
+{
+    public function __construct()
+    {
+        parent::__construct({{ model }}::class);
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "att/workit",
+    "description": "Standart Framework of ATT Group",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Att\\Workit\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "ATT Group"
+        }
+    ],
+    "require": {
+        "att/responisme": "dev-master",
+        "yajra/laravel-datatables-oracle": "^10.0"
+    },    
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Att\\Workit\\WorkItServiceProvider"
+        ]
+      }
+    }
+}

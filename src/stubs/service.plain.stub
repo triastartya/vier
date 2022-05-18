@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+use Att\Workit\AttService;
+
+class {{ class }} extends AttService
+{
+    public function __construct()
+    {
+        // parent::__construct(new Model());
+    }
+}
