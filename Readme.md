@@ -4,15 +4,15 @@ Dokumentasi sementara dari base framework ATT.
 # Cara Install
 Tambahkan `script` dibawah ini `composer.json`
 ```javascript
-{
-  "data": {
-    "id": 1,
-    "firstname": "John",
-    "lastname": "Doe",
-    "email": "johndoe@email.com",
-    "created_at": "2021-12-09T08:38:26.000000Z",
-    "updated_at": "2021-12-09T08:38:26.000000Z"
-  }
+"repositories": {
+    "att/workit": {
+        "type": "vcs",
+        "url": "https://gitlab.att.id/sofamh/workit.git"
+    },
+    "att/responisme": {
+        "type": "vcs",
+        "url": "https://gitlab.att.id/sofamh/responisme.git"             
+    }
 }
 ```
 
