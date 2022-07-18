@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 trait AttModel
 {
@@ -216,6 +217,8 @@ trait AttModel
             return $relation->getForeignKeyName();
         } else if ($relation instanceof HasMany) {
             return $relation->getParentKey() ?? 'id';
+        } else if ($relation instanceof HasOne) {
+            return $relation->getLocalKeyName();
         }
     }
 
@@ -226,6 +229,8 @@ trait AttModel
         if ($relation instanceof BelongsTo) {
             return $relation->getOwnerKeyName();
         } else if ($relation instanceof HasMany) {
+            return $relation->getForeignKeyName();
+        } else if ($relation instanceof HasOne) {
             return $relation->getForeignKeyName();
         }
     }
@@ -261,5 +266,30 @@ trait AttModel
     public function getLovFields()
     {
         return $this->lovFields ?? [];
+    }
+
+    /**
+     * Add multiple where in
+     *
+     * @param [type] $query
+     * @param array $filters // ['fieldName' => ['val1', 'val2', 'val3']]
+     * @return void
+     */
+    public function scopeMultipleWhereIn($query, array $filters)
+    {
+        $query->where(function ($query) use ($filters) {
+            foreach ($filters as $field => $value) {
+                $query->whereIn($field, $value);
+            }
+        });
+
+        /**
+         * $model->multipleWhereIn([
+         *      'type' => ['Pre', 'Assesment'],
+         *      'transaction_id' => [1, 2, 3]
+         * ])->get();
+         */
+
+        // $model->multipleWhereIn([])->get();
     }
 }
