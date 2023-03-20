@@ -1,12 +1,12 @@
 <?php
 
-namespace Att\Workit;
+namespace Viershaka\Vier;
 
-use Att\Workit\Exceptions\ModelClassIsRequiredException;
+use Viershaka\Vier\Exceptions\ModelClassIsRequiredException;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 
-class AttRepository
+class VierRepository
 {
     protected $relatedModels = [];
     protected $fields = ['*'];

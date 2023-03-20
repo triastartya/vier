@@ -1,11 +1,11 @@
 <?php
 
-namespace Att\Workit\Exceptions;
+namespace Viershaka\Vier\Exceptions;
 
 use Exception;
 use Illuminate\Validation\Validator;
 
-class ValidationException extends AttException 
+class ValidationException extends VierException 
 {
     protected $validator;
 

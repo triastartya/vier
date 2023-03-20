@@ -1,13 +1,13 @@
 <?php
 
-namespace Att\Workit;
+namespace Viershaka\Vier;
 
-use Att\Workit\Commands\MakeRepositoryCommand;
-use Att\Workit\Commands\MakeServiceCommand;
+use Viershaka\Vier\Commands\MakeRepositoryCommand;
+use Viershaka\Vier\Commands\MakeServiceCommand;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 
-class WorkItServiceProvider extends ServiceProvider
+class VierServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -26,8 +26,9 @@ class WorkItServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+    
         $this->loadRoutesFrom(__DIR__.'/Gateway.php');
-
+        
         if ($this->app->runningInConsole()) {
             $this->commands([
                 MakeServiceCommand::class,
@@ -36,5 +37,6 @@ class WorkItServiceProvider extends ServiceProvider
         }
 
         File::copyDirectory(__DIR__.'/stubs', base_path('stubs'));
+
     }
 }

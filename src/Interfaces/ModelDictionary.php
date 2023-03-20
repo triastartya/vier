@@ -1,6 +1,6 @@
 <?php
 
-namespace Att\Workit\Interfaces;
+namespace Viershaka\Vier\Interfaces;
 
 interface ModelDictionary
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Att\Workit\Exceptions;
+namespace Viershaka\Vier\Exceptions;
 
 use Exception;
 
-class InvalidRepository extends AttException
+class InvalidRepository extends VierException
 {
     //
 }

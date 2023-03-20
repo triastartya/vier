@@ -1,27 +1,26 @@
 {
-    "name": "att/workit",
-    "description": "Standart Framework of ATT Group",
+    "name": "viershaka/vier",
+    "description": "meja kerja",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Att\\Workit\\": "src/"
+            "Viershaka\\Vier\\": "src/"
         }
     },
-    "minimum-stability": "dev",
     "authors": [
         {
-            "name": "ATT Group"
+            "name": "Vier Dan Shaka"
         }
     ],
     "require": {
-        "att/responisme": "dev-master",
+        "viershaka/shaka": "dev-master",
         "yajra/laravel-datatables-oracle": "^10.0"
     },    
     "extra": {
       "laravel": {
         "providers": [
-          "Att\\Workit\\WorkItServiceProvider"
+          "Viershaka\\Vier\\VierServiceProvider"
         ]
       }
     }

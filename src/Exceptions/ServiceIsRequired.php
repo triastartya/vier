@@ -1,10 +1,10 @@
 <?php
 
-namespace Att\Workit\Exceptions;
+namespace Viershaka\Vier\Exceptions;
 
 use Exception;
 
-class ServiceIsRequired extends AttException
+class ServiceIsRequired extends VierException
 {
     //
 }

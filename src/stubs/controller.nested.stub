@@ -4,11 +4,11 @@ namespace {{ namespace }};
 
 use {{ namespacedModel }};
 use {{ rootNamespace }}Http\Controllers\Controller;
-use Att\Workit\AttController;
+use Viershaka\Vier\VierController;
 use Illuminate\Http\Request;
 use {{ namespacedParentModel }};
 
-class {{ class }} extends AttController
+class {{ class }} extends VierController
 {
     public function __construct()
     {

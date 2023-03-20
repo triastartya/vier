@@ -1,18 +1,18 @@
 <?php
 
-namespace Att\Workit;
+namespace Viershaka\Vier;
 
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Att\Workit\Exceptions\InvalidRepository;
-use Att\Workit\Exceptions\InvalidService;
-use Att\Workit\Exceptions\RepositoryIsRequired;
-use Att\Workit\Exceptions\ServiceIsRequired;
-use Att\Workit\Traits\ControllerAction;
+use Viershaka\Vier\Exceptions\InvalidRepository;
+use Viershaka\Vier\Exceptions\InvalidService;
+use Viershaka\Vier\Exceptions\RepositoryIsRequired;
+use Viershaka\Vier\Exceptions\ServiceIsRequired;
+use Viershaka\Vier\Traits\ControllerAction;
 
-class AttController extends Controller
+class VierController extends Controller
 {
     use ControllerAction;
 
@@ -21,6 +21,7 @@ class AttController extends Controller
 
     public function __construct($repository, $service)
     {
+    
         $this->validateConstructorParams($repository, $service);
 
         $this->repository = $repository;
@@ -45,8 +46,9 @@ class AttController extends Controller
 
     public function index()
     {
+        
         $this->beforeIndex();
-
+        
         $data = $this->repository->get(request('perPage', 15));
         // $data = $this->repository->setFilter($this->getFilters())->get(request('perPage', 15));
 
@@ -167,10 +169,11 @@ class AttController extends Controller
 
     protected function validateConstructorParams($repository, $service)
     {
+        
         $validRepositoryClasses = [
-            AttRepository::class
+            VierRepository::class
         ];
-
+       
         if (!isset($repository)) {
             throw new RepositoryIsRequired();
         } else {
@@ -182,7 +185,7 @@ class AttController extends Controller
         }
 
         $validServiceClasses = [
-            AttService::class
+            VierService::class
         ];
 
         if (!isset($service)) {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Att\Workit;
+namespace Viershaka\Vier;
 
-use Att\Workit\Exceptions\ModelClassIsRequiredException;
-use Att\Workit\Exceptions\ValidationException;
+use Viershaka\Vier\Exceptions\ModelClassIsRequiredException;
+use Viershaka\Vier\Exceptions\ValidationException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 
-class AttService 
+class VierService 
 {
     public function __construct($modelCls)
     {

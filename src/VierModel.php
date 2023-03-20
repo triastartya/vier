@@ -1,15 +1,15 @@
 <?php
 
-namespace Att\Workit;
+namespace Viershaka\Vier;
 
-use Att\Workit\Interfaces\ModelDictionary;
+use Viershaka\Vier\Interfaces\ModelDictionary;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-trait AttModel
+trait VierModel
 {
     protected $selectedFields;
     protected $separator = '.';

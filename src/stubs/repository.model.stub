@@ -2,10 +2,10 @@
 
 namespace {{ namespace }};
 
-use Att\Workit\AttRepository;
+use Viershaka\Vier\VierRepository;
 use {{ namespacedModel }};
 
-class {{ class }} extends AttRepository
+class {{ class }} extends VierRepository
 {
     public function __construct()
     {

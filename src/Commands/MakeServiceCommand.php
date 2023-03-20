@@ -1,6 +1,6 @@
 <?php
 
-namespace Att\Workit\Commands;
+namespace Viershaka\Vier\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\GeneratorCommand;

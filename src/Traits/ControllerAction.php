@@ -1,6 +1,6 @@
 <?php
 
-namespace Att\Workit\Traits;
+namespace Viershaka\Vier\Traits;
 
 use Illuminate\Http\Request;
 

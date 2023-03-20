@@ -1,9 +1,9 @@
 <?php
 
-namespace Att\Workit\Exceptions;
+namespace Viershaka\Vier\Exceptions;
 
 use Exception;
 
-class ModelClassIsRequiredException extends AttException 
+class ModelClassIsRequiredException extends VierException 
 {
 }

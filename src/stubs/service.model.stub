@@ -2,10 +2,10 @@
 
 namespace {{ namespace }};
 
-use Att\Workit\AttService;
+use Viershaka\Vier\VierService;
 use {{ namespacedModel }};
 
-class {{ class }} extends AttService
+class {{ class }} extends VierService
 {
     public function __construct()
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Att\Workit\Exceptions;
+namespace Viershaka\Vier\Exceptions;
 
 use Exception;
 
 /**
  * Exception root class
  */
-class AttException extends Exception 
+class VierException extends Exception 
 {
     public function __construct($message = 'Error', $code = 400) {
         parent::__construct($message, $code);
