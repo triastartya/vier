@@ -8,6 +8,7 @@
             "Viershaka\\Vier\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Vier Dan Shaka"
