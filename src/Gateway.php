@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::macro('attResource', function ($prefix, $controller) {
+Route::macro('pointResource', function ($prefix, $controller) {
     Route::prefix($prefix)->group(function () use ($controller) {
         Route::get('/', [$controller, 'index']);
         Route::get('datatables', [$controller, 'datatables']);

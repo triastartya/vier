@@ -5,7 +5,6 @@ namespace {{ namespace }};
 use {{ namespacedModel }};
 use {{ rootNamespace }}Http\Controllers\Controller;
 use Viershaka\Vier\VierController;
-use App\Services\{{ model }}Service;
 use App\Repositories\{{ model }}Repository;
 use Illuminate\Http\Request;
 
@@ -14,8 +13,7 @@ class {{ class }} extends VierController
     public function __construct()
     {
         $repository = new {{ model }}Repository();
-        $service = new {{ model }}Service();
 
-        parent::__construct($repository, $service);
+        parent::__construct($repository);
     }
 }

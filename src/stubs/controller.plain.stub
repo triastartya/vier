@@ -11,8 +11,7 @@ class {{ class }} extends VierController
     public function __construct()
     {
         // $repository = new SchemeRepository();
-        // $service = new SchemeService();
 
-        // parent::__construct($repository, $service);
+        // parent::__construct($repository);
     }
 }
