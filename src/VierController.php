@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Viershaka\Vier\Exceptions\InvalidRepository;
-use Viershaka\Vier\Exceptions\InvalidService;
 use Viershaka\Vier\Exceptions\RepositoryIsRequired;
-use Viershaka\Vier\Exceptions\ServiceIsRequired;
 use Viershaka\Vier\Traits\ControllerAction;
 
 class VierController extends Controller
@@ -17,15 +15,15 @@ class VierController extends Controller
     use ControllerAction;
 
     public $repository;
-    public $service;
+    // public $service;
 
-    public function __construct($repository, $service)
+    public function __construct($repository)
     {
     
-        $this->validateConstructorParams($repository, $service);
+        $this->validateConstructorParams($repository);
 
         $this->repository = $repository;
-        $this->service = $service;
+        // $this->service = $service;
 
         $fields = request()->fields;
 
@@ -97,7 +95,7 @@ class VierController extends Controller
 
     public function storeData(array $data)
     {
-        return $this->service->store($data);
+        return $this->repository->store($data);
     }
 
     public function update($id)
@@ -107,7 +105,7 @@ class VierController extends Controller
         DB::transaction(function () use ($data) {
             $attributes = $this->beforeUpdate(request());
 
-            $this->service->update($data, $attributes);
+            $this->repository->update($data, $attributes);
 
             $this->afterUpdate($data);
         });
@@ -124,7 +122,7 @@ class VierController extends Controller
         DB::transaction(function () use ($data) {
             $this->beforeDestroy($data);
 
-            $this->service->delete($data);
+            $this->repository->delete($data);
 
             $this->afterDestroy($data);
         });
@@ -167,7 +165,7 @@ class VierController extends Controller
             ->build();
     }
 
-    protected function validateConstructorParams($repository, $service)
+    protected function validateConstructorParams($repository)
     {
         
         $validRepositoryClasses = [
@@ -184,19 +182,19 @@ class VierController extends Controller
             }
         }
 
-        $validServiceClasses = [
-            VierService::class
-        ];
+        // $validServiceClasses = [
+        //     VierService::class
+        // ];
 
-        if (!isset($service)) {
-            throw new ServiceIsRequired();
-        } else {
-            foreach ($validServiceClasses as $validServiceClass) {
-                if (!$service instanceof $validServiceClass) {
-                    throw new InvalidService();
-                }
-            }
-        }
+        // if (!isset($service)) {
+        //     throw new ServiceIsRequired();
+        // } else {
+        //     foreach ($validServiceClasses as $validServiceClass) {
+        //         if (!$service instanceof $validServiceClass) {
+        //             throw new InvalidService();
+        //         }
+        //     }
+        // }
     }
 
     public function guardNameIs($name)
