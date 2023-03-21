@@ -41,6 +41,12 @@ class VierController extends Controller
 
         $this->repository->setFilter($this->getFilters());
     }
+    
+    public function all()
+    {
+        $data = $this->repository->getModel()->limit(200)->get();
+        return response()->json(['success'=>true,'data'=>$data]);
+    }
 
     public function index()
     {

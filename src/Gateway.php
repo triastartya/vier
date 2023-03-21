@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::macro('pointResource', function ($prefix, $controller) {
     Route::prefix($prefix)->group(function () use ($controller) {
+        Route::get('/all', [$controller, 'all']);
         Route::get('/', [$controller, 'index']);
         Route::get('datatables', [$controller, 'datatables']);
         Route::get('lov', [$controller, 'lov']);
