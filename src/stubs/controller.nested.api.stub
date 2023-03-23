@@ -10,11 +10,12 @@ use {{ namespacedParentModel }};
 
 class {{ class }} extends VierController
 {
+    public $repository;
+    
     public function __construct()
     {
-        // $repository = new SchemeRepository();
-
-        // parent::__construct($repository);
+        // $this->repository = new SchemeRepository();
+        // parent::__construct($this->repository);
     }
 
     /**
