@@ -15,7 +15,7 @@ class ValidationException extends VierException
             $message = $this->formatMessage($msg, $validator);
             $this->validator = $validator;
         }
-        parent::__construct($message, 422);
+        parent::__construct($message, 200);
     }
 
     public function formatMessage($msg, $validator) {
